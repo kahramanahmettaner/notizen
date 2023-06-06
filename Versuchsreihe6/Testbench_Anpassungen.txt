@@ -1,0 +1,21 @@
+Versuch 6 Testbench erstellen
+
+Es müssen ein paar Änderungen an der Testbench durchgeführt werden, damit die Simulation gestartet werden kann.
+Fügen sie zunächst die unten stehenden Libraries der Testbench hinzu, falls nicht vorhanden. Diese finden sich auch zu Beginn dem asha.vhd Hauptmodul.
+
+-> Libraries laden:
+	library IEEE;
+	use IEEE.STD_LOGIC_1164.ALL;
+	library work;
+	use work.AshaTypes.ALL;
+	use IEEE.NUMERIC_STD.ALL;
+
+Ähnlich wie in asha.vhd müssen die drei Signale ADCRegister, ControlLightDiffOut und ControlTempDiffOut richtig definiert werden. Falls diese nicht wie unten definiert sind, ändern sie dies bitte entsprechend.
+
+
+-> ADCRegisterType für ADCRegister definieren
+	ADCRegister			   :	in  ADCRegisterType; 
+
+-> Controll Light als unsigned:
+	ControlLightDiffOut 		:   in unsigned(12 downto 0);		  
+	ControlTempDiffOut  	    :   in unsigned(12 downto 0)	
